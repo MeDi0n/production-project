@@ -8,14 +8,20 @@ import { AboutPage } from "pages/AboutPage";
 import { MainPage } from "pages/MainPage";
 import { AppRoutes } from "./providers/router";
 import { Navbar } from "widgets/Navbar";
+import { Sidebar } from "widgets/Sidebar";
+import { useTranslation } from "react-i18next";
 
 const App = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
   return (
     <div className={classNames("app", {}, [theme])}>
-      <Navbar />
-      <AppRoutes />
-      <button onClick={toggleTheme}>TOGGLE</button>
+      <Suspense fallback="">
+        <Navbar />
+        <div className="content-page">
+          <Sidebar />
+          <AppRoutes />
+        </div>
+      </Suspense>
     </div>
   );
 };
