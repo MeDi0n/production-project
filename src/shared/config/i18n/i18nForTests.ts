@@ -13,4 +13,4 @@ i18n.use(initReactI18next).init({
   resources: { ru: { translations: {} } },
 });
 
-export default i18nForTests;
+export const i18nForTests = i18n;
