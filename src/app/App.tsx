@@ -1,15 +1,10 @@
 import React, { Suspense, useContext, useEffect, useState } from "react";
-import "./styles/index.scss";
-import { Route, Routes } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTheme } from "./providers/ThemeProvider";
-import { AboutPage } from "pages/AboutPage";
-import { MainPage } from "pages/MainPage";
 import { AppRoutes } from "./providers/router";
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
-import { useTranslation } from "react-i18next";
+import { Modal } from "shared/ui/Modal/Modal";
 
 const App = () => {
   const { theme } = useTheme();
