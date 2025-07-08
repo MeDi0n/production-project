@@ -10,22 +10,45 @@ export default ({ config }: { config: webpack.Configuration }) => {
     entry: "",
     src: path.resolve(__dirname, "..", "..", "src"),
   };
-  config.resolve?.modules?.push(paths.src);
-  config.resolve?.extensions?.push(".ts", ".tsx");
 
-  config.module.rules = config.module?.rules?.map((rule: RuleSetRule) => {
-    if (/svg/.test(rule.test as string)) {
-      return { ...rule, exclude: /\.svg$/i };
-    }
-    return rule;
-  });
+  // Обязательно инициализируем resolve
+  config.resolve = config.resolve || {};
+  config.resolve.modules = [
+    ...(config.resolve.modules || []),
+    paths.src,
+    "node_modules",
+  ];
+  config.resolve.extensions = [
+    ...(config.resolve.extensions || []),
+    ".ts",
+    ".tsx",
+    ".js",
+  ];
 
-  config.module?.rules?.push({
+  config.resolve.alias = {
+    ...(config.resolve.alias || {}),
+    "@entities": path.resolve(paths.src, "entities"),
+    "@shared": path.resolve(paths.src, "shared"),
+    "@features": path.resolve(paths.src, "features"),
+    "@widgets": path.resolve(paths.src, "widgets"),
+    "@pages": path.resolve(paths.src, "pages"),
+    "@app": path.resolve(paths.src, "app"),
+  };
+
+  config.module.rules =
+    config.module?.rules?.map((rule: RuleSetRule) => {
+      if (rule.test instanceof RegExp && rule.test.test(".svg")) {
+        return { ...rule, exclude: /\.svg$/i };
+      }
+      return rule;
+    }) || [];
+
+  config.module.rules.push({
     test: /\.svg$/,
     use: ["@svgr/webpack"],
   });
 
-  config.module?.rules?.push(buildCssLoader(true));
+  config.module.rules.push(buildCssLoader(true));
 
   config.plugins?.push(
     new DefinePlugin({
