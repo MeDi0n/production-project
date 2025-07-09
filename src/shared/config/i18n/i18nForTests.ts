@@ -1,16 +1,24 @@
+// i18nForTests.ts
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-i18n.use(initReactI18next).init({
+export const i18nForTests = i18n.createInstance();
+
+i18nForTests.use(initReactI18next).init({
   lng: "ru",
   fallbackLng: "ru",
   debug: false,
-
-  interpolation: {
-    escapeValue: false, // not needed for react!!
+  interpolation: { escapeValue: false },
+  resources: {
+    ru: {
+      translation: {
+        // можно добавить минимальные ключи для тестов или оставить пустым
+      },
+    },
+    en: {
+      translation: {},
+    },
   },
-
-  resources: { ru: { translations: {} } },
 });
 
-export const i18nForTests = i18n;
+export default i18nForTests;

@@ -27,8 +27,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
   config.resolve.alias = {
     ...(config.resolve.alias || {}),
-    "@entities": path.resolve(paths.src, "entities"),
-    "@shared": path.resolve(paths.src, "shared"),
+    entites: path.resolve(paths.src, "entities"),
+    shared: path.resolve(paths.src, "shared"),
     "@features": path.resolve(paths.src, "features"),
     "@widgets": path.resolve(paths.src, "widgets"),
     "@pages": path.resolve(paths.src, "pages"),
