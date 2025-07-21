@@ -8,7 +8,7 @@
     { "id": "2", "text": "another comment about post 1", "postId": "1" }
   ],
   "users": {
-    "id": 1,
+    "id": "1",
     "username": "admin",
     "password": "123"
   },
