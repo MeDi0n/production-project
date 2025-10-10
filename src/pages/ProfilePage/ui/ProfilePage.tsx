@@ -21,8 +21,8 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
-import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 import { Text, TextTheme } from "shared/ui/Text/Text";
+import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -116,13 +116,13 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
       <div className={classNames("", {}, [className])}>
         <ProfilePageHeader />
         {validateErrors?.length &&
-          validateErrors.map((err) => {
+          validateErrors.map((err) => (
             <Text
               key={err}
               theme={TextTheme.ERROR}
               text={validateErrorTranslates[err]}
-            />;
-          })}
+            />
+          ))}
         <ProfileCard
           data={formData}
           isLoading={isLoading}
