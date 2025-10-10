@@ -33,7 +33,7 @@ describe("profileSlice.test", () => {
       profileReducer(state as ProfileSchema, profileActions.cancelEdit())
     ).toEqual({
       readonly: true,
-      validateErrors: undefined,
+      validateErrors: [],
       data,
       form: data,
     });
@@ -64,7 +64,7 @@ describe("profileSlice.test", () => {
       profileReducer(state as ProfileSchema, updateProfileData.pending)
     ).toEqual({
       isLoading: true,
-      validateErrors: undefined,
+      validateErrors: [],
     });
   });
 
@@ -80,9 +80,8 @@ describe("profileSlice.test", () => {
       )
     ).toEqual({
       isLoading: false,
-      validateErrors: undefined,
+      validateErrors: [],
       readonly: true,
-      validateError: undefined,
       form: data,
       data,
     });

@@ -14,7 +14,7 @@
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
-    "test:ui": "npx loki test",
+    "test:ui": "npx loki test --reactUri file:./storybook-static",
     "test:ui:ok": "npx loki approve",
     "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
@@ -60,9 +60,11 @@
     "entities": "^7.0.0",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-i18next": "^5.1.2",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.3.0",
     "file-loader": "^6.2.0",
@@ -106,11 +108,17 @@
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.docker",
+        "dockerOptions": {
+          "volume": "%CD%:/work"
+        },
         "width": 1366,
         "height": 768
       },
       "chrome.iphone7": {
         "target": "chrome.docker",
+        "dockerOptions": {
+          "volume": "%CD%:/work"
+        },
         "preset": "iPhone 7"
       }
     }
