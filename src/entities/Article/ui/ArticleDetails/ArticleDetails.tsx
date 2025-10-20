@@ -9,7 +9,7 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { memo, useCallback, useEffect } from "react";
 import {
   getArticleDetailsData,
-  getArticleDetailsIsError,
+  getArticleDetailsError,
   getArticleDetailsIsLoading,
 } from "entities/Article/model/selectors/articleDetails";
 import { fetchArticleById } from "entities/Article/model/services/fetchArticleById/fetchArticleById";
@@ -45,7 +45,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   // const isLoading = useSelector(getArticleDetailsIsLoading);
   const isLoading = useSelector(getArticleDetailsIsLoading);
   const article = useSelector(getArticleDetailsData);
-  const error = useSelector(getArticleDetailsIsError);
+  const error = useSelector(getArticleDetailsError);
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
