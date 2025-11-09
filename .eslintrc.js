@@ -23,9 +23,78 @@ module.exports = {
     "plugin:react/recommended",
     "airbnb",
     "plugin:i18next/recommended",
-    "plugin:prettier/recommended", // добавляем Prettier в конец
+    "plugin:prettier/recommended", // Prettier всегда должен быть последним
   ],
   rules: {
+    // ---------------------------------------------------
+    // ПРАВИЛО ДЛЯ СОРТИРОВКИ ИМПОРТОВ (FSD)
+    // ---------------------------------------------------
+    "import/order": [
+      "error", // Считать ошибкой, если порядок нарушен
+      {
+        groups: [
+          "builtin", // Встроенные в Node.js (fs, path)
+          "external", // Внешние (react, react-router-dom)
+          "internal", // Внутренние (из webpack aliases - app, pages, entities, etc)
+          "parent", // Родительские (../)
+          "sibling", // Соседние (./)
+          "index", // Индекс-файлы (./index)
+          "object", // Импорты типов (import type ...)
+        ],
+        // Определяем группы для вашей FSD-архитектуры
+        pathGroups: [
+          // React всегда наверху
+          {
+            pattern: "react",
+            group: "external",
+            position: "before",
+          },
+          // Стили всегда в самом низу
+          {
+            pattern: "*.scss",
+            group: "object", // Относим к "типам", чтобы они были в конце
+            position: "after",
+          },
+          // Алиасы FSD
+          {
+            pattern: "app/**",
+            group: "internal",
+          },
+          {
+            pattern: "pages/**",
+            group: "internal",
+          },
+          {
+            pattern: "widgets/**",
+            group: "internal",
+          },
+          {
+            pattern: "features/**",
+            group: "internal",
+          },
+          {
+            pattern: "entities/**",
+            group: "internal",
+          },
+          {
+            pattern: "shared/**",
+            group: "internal",
+          },
+        ],
+        // Добавляем пустую строку-отступ между группами
+        "newlines-between": "always",
+        // Сортируем импорты внутри групп по алфавиту
+        alphabetize: {
+          order: "asc",
+          caseInsensitive: true,
+        },
+        pathGroupsExcludedImportTypes: ["react"],
+      },
+    ],
+
+    // ---------------------------------------------------
+    // ПРАВИЛА ДЛЯ PRETTIER
+    // ---------------------------------------------------
     // Отключаем правила, которые дублируют Prettier
     indent: "off",
     "react/jsx-indent": "off",
@@ -35,7 +104,9 @@ module.exports = {
     // Включаем проверку Prettier через ESLint
     "prettier/prettier": "error",
 
-    // Остальные твои кастомные правила
+    // ---------------------------------------------------
+    // ОСТАЛЬНЫЕ ПРАВИЛА ПРОЕКТА
+    // ---------------------------------------------------
     "react/jsx-filename-extension": [
       2,
       { extensions: [".js", ".jsx", ".tsx"] },

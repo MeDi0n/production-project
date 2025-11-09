@@ -1,15 +1,18 @@
+import { error } from "console";
+
 import {
   createEntityAdapter,
   createSlice,
   EntityState,
   PayloadAction,
 } from "@reduxjs/toolkit";
+import { ids } from "webpack";
+
 import { StateSchema } from "app/providers/StoreProvider";
 import { Comment } from "entities/Comment";
-import { error } from "console";
-import { ids } from "webpack";
-import { ArticleDetailsCommentsSchema } from "../types/ArticleDetailsCommentsSchema";
+
 import { fetchCommentsByArticleId } from "../services/fecthCommentByArticleId/fecthCommentByArticleId";
+import { ArticleDetailsCommentsSchema } from "../types/ArticleDetailsCommentsSchema";
 
 const commentsAdapter = createEntityAdapter<Comment>({
   selectId: (comment) => comment.id,

@@ -1,6 +1,9 @@
-import { classNames } from "shared/lib/classNames/classNames";
-import { useTranslation } from "react-i18next";
 import { memo } from "react";
+
+import { useTranslation } from "react-i18next";
+
+import { classNames } from "shared/lib/classNames/classNames";
+
 import cls from "./ArticlesPage.module.scss";
 
 interface ArticlesPageProps {

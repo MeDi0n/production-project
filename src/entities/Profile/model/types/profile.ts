@@ -1,5 +1,5 @@
-import { Currency } from "entities/Currency/model/types/currency";
 import { Country } from "entities/Country/model/types/country";
+import { Currency } from "entities/Currency/model/types/currency";
 
 export enum ValidateProfileError {
   INCORRECT_USER_DATA = "INCORRECT_USER_DATA",
@@ -10,6 +10,7 @@ export enum ValidateProfileError {
 }
 
 export interface Profile {
+  id?: string;
   first?: string;
   lastname?: string;
   age?: number;

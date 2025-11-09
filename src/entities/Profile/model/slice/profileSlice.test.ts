@@ -1,3 +1,5 @@
+import { Country } from "entities/Country";
+import { Currency } from "entities/Currency";
 import {
   profileActions,
   profileReducer,
@@ -5,8 +7,6 @@ import {
   updateProfileData,
   ValidateProfileError,
 } from "entities/Profile";
-import { Country } from "entities/Country";
-import { Currency } from "entities/Currency";
 
 const data = {
   username: "admin",

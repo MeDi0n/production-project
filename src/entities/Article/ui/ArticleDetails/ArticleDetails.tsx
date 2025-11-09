@@ -1,32 +1,36 @@
-import { classNames } from "shared/lib/classNames/classNames";
-import { useTranslation } from "react-i18next";
-import {
-  DynamicModuleLoader,
-  ReducersList,
-} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { useSelector } from "react-redux";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { memo, useCallback, useEffect } from "react";
+
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+
 import {
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsIsLoading,
 } from "entities/Article/model/selectors/articleDetails";
 import { fetchArticleById } from "entities/Article/model/services/fetchArticleById/fetchArticleById";
-import { Text, TextAlign, TextSize } from "shared/ui/Text/Text";
-import { Skeleton } from "shared/ui/Skeleton/Skeleton";
-import { Avatar } from "shared/ui/Avatar/Avatar";
-import EyeIcon from "shared/assets/icons/eye-20-20.svg";
-import CalendarIcon from "shared/assets/icons/calendar-20-20.svg";
-import { Icon } from "shared/ui/Icon/Icon";
 import {
   ArticleBlock,
   ArticleBlockType,
 } from "entities/Article/model/types/article";
+import CalendarIcon from "shared/assets/icons/calendar-20-20.svg";
+import EyeIcon from "shared/assets/icons/eye-20-20.svg";
+import { classNames } from "shared/lib/classNames/classNames";
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Avatar } from "shared/ui/Avatar/Avatar";
+import { Icon } from "shared/ui/Icon/Icon";
+import { Skeleton } from "shared/ui/Skeleton/Skeleton";
+import { Text, TextAlign, TextSize } from "shared/ui/Text/Text";
+
 import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
+
 import cls from "./ArticleDetails.module.scss";
 
 interface ArticleDetailsProps {
