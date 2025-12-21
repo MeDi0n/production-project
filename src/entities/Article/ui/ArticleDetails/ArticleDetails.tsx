@@ -31,8 +31,8 @@ import { ArticleBlock, ArticleBlockType } from "../../model/types/article";
 import cls from "./ArticleDetails.module.scss";
 
 interface ArticleDetailsProps {
-  id: string;
   className?: string;
+  id: string;
 }
 
 const reducers: ReducersList = {
@@ -102,9 +102,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
       </>
     );
   } else if (error) {
-    content = (
-      <Text align={TextAlign.CENTER} title={t("Error loading article")} />
-    );
+    content = <Text align={TextAlign.CENTER} title={t("article.loadError")} />;
   } else {
     content = (
       <>
