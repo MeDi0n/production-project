@@ -102,7 +102,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
       </>
     );
   } else if (error) {
-    content = <Text align={TextAlign.CENTER} title={t("article.loadError")} />;
+    content = (
+      <Text align={TextAlign.CENTER} title={t("articleDetails.loadError")} />
+    );
   } else {
     content = (
       <>
