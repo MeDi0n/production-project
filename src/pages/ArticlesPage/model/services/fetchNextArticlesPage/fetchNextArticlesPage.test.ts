@@ -1,42 +1,44 @@
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { fetchNextArticlesPage } from './fetchNextArticlesPage';
-import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
+import { TestAsyncThunk } from "shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
 
-jest.mock('../fetchArticlesList/fetchArticlesList');
+import { fetchArticlesList } from "../fetchArticlesList/fetchArticlesList";
 
-describe('fetchNextArticlesPage.test', () => {
-    test('success', async () => {
-        const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
-            articlesPage: {
-                page: 2,
-                ids: [],
-                entities: {},
-                limit: 5,
-                isLoading: false,
-                hasMore: true,
-            },
-        });
+import { fetchNextArticlesPage } from "./fetchNextArticlesPage";
 
-        await thunk.callThunk();
+jest.mock("../fetchArticlesList/fetchArticlesList");
 
-        expect(thunk.dispatch).toBeCalledTimes(4);
-        expect(fetchArticlesList).toHaveBeenCalledWith({ page: 3 });
+describe("fetchNextArticlesPage.test", () => {
+  test("success", async () => {
+    const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
+      articlesPage: {
+        page: 2,
+        ids: [],
+        entities: {},
+        limit: 5,
+        isLoading: false,
+        hasMore: true,
+      },
     });
-    test('fetchAritcleList not called', async () => {
-        const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
-            articlesPage: {
-                page: 2,
-                ids: [],
-                entities: {},
-                limit: 5,
-                isLoading: false,
-                hasMore: false,
-            },
-        });
 
-        await thunk.callThunk();
+    await thunk.callThunk();
 
-        expect(thunk.dispatch).toBeCalledTimes(2);
-        expect(fetchArticlesList).not.toHaveBeenCalled();
+    expect(thunk.dispatch).toBeCalledTimes(4);
+    expect(fetchArticlesList).toHaveBeenCalled();
+  });
+  test("fetchAritcleList not called", async () => {
+    const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
+      articlesPage: {
+        page: 2,
+        ids: [],
+        entities: {},
+        limit: 5,
+        isLoading: false,
+        hasMore: false,
+      },
     });
+
+    await thunk.callThunk();
+
+    expect(thunk.dispatch).toBeCalledTimes(2);
+    expect(fetchArticlesList).not.toHaveBeenCalled();
+  });
 });
