@@ -33,7 +33,7 @@ import cls from "./ArticleDetails.module.scss";
 
 interface ArticleDetailsProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 const reducers: ReducersList = {
@@ -84,7 +84,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
       dispatch(fetchArticleById(id));
     }
   }, [dispatch, id]);
-  HStack;
 
   let content;
 
