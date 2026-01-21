@@ -39,7 +39,7 @@ export const ArticleDetailsComments = memo(
     });
 
     return (
-      <VStack gap="16">
+      <VStack gap="16" max>
         <Text size={TextSize.L} className="" title={t("Комментарии")} />
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList isLoading={commentsIsLoading} comments={comments} />
