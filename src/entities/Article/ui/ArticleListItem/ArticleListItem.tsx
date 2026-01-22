@@ -12,14 +12,13 @@ import { Card } from "shared/ui/Card/Card";
 import { Icon } from "shared/ui/Icon/Icon";
 import { Text } from "shared/ui/Text/Text";
 
-import {
-  Article,
-  ArticleBlockType,
-  ArticleTextBlock,
-  ArticleView,
-} from "../../model/types/article";
+import { Article, ArticleTextBlock } from "../../model/types/article";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 
+import {
+  ArticleBlockType,
+  ArticleView,
+} from "entities/Article/model/consts/articleConsts";
 import cls from "./ArticleListItem.module.scss";
 
 interface ArticleListItemProps {

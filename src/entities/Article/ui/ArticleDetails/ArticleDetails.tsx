@@ -27,8 +27,9 @@ import {
 } from "../../model/selectors/articleDetails";
 import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
 import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
-import { ArticleBlock, ArticleBlockType } from "../../model/types/article";
 
+import { ArticleBlockType } from "entities/Article/model/consts/articleConsts";
+import { ArticleBlock } from "entities/Article/model/types/article";
 import cls from "./ArticleDetails.module.scss";
 
 interface ArticleDetailsProps {

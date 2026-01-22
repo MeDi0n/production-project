@@ -8,9 +8,10 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { Text, TextSize } from "shared/ui/Text/Text";
 import { PAGE_ID } from "widgets/Page/Page";
 
-import { Article, ArticleView } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 
+import { ArticleView } from "entities/Article/model/consts/articleConsts";
+import { Article } from "entities/Article/model/types/article";
 import cls from "./ArticleList.module.scss";
 
 interface ArticleListProps {
