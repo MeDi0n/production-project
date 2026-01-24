@@ -11,7 +11,6 @@ import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Avatar } from "shared/ui/Avatar/Avatar";
 import { Dropdown } from "shared/ui/Popups";
-import cls from "./AvatarDropdown.module.scss";
 
 interface AvatarDropdownProps {
   className?: string;
@@ -38,7 +37,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
   return (
     <Dropdown
       direction="bottom left"
-      className={classNames(cls.AvatarDropdown, {}, [className])}
+      className={classNames("", {}, [className])}
       items={[
         ...(isAdminPanelAvailable
           ? [
