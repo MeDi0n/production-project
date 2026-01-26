@@ -4,15 +4,15 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 
-import { ArticleList } from "entities/Article";
+import { ArticleList } from "@/entities/Article";
 import {
   getArticlesPageError,
   getArticlesPageIsLoading,
   getArticlesPageView,
-} from "pages/ArticlesPage/model/selectors/articlesPageSelectors";
-import { getArticles } from "pages/ArticlesPage/model/slices/articlesPageSlice";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Text } from "shared/ui/Text/Text";
+} from "@/pages/ArticlesPage/model/selectors/articlesPageSelectors";
+import { getArticles } from "@/pages/ArticlesPage/model/slices/articlesPageSlice";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Text } from "@/shared/ui/Text/Text";
 
 interface ArticleInfiniteListProps {
   className?: string;
