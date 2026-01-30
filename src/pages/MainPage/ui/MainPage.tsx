@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { useTranslation } from "react-i18next";
 
+import { RatingCard } from "@/entities/Rating";
 import { Page } from "@/widgets/Page/Page";
 
 const MainPage = () => {
@@ -12,7 +13,16 @@ const MainPage = () => {
     setValue(val);
   };
 
-  return <Page>{t("Главная страница")}</Page>;
+  return (
+    <Page>
+      {t("Главная страница")}
+      <RatingCard
+        title={"Как вам статья?"}
+        feedbackTitle={"Оставьте отзыв о статье"}
+        hasFeedback
+      />
+    </Page>
+  );
 };
 
 export default MainPage;
