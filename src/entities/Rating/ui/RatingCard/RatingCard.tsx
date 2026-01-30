@@ -11,7 +11,6 @@ import { memo, useCallback, useState } from "react";
 import { BrowserView, MobileView } from "react-device-detect";
 import { useTranslation } from "react-i18next";
 import cls from "./RatingCard.module.scss";
-
 interface RatingCardProps {
   className?: string;
   title?: string;
