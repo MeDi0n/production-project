@@ -1,10 +1,13 @@
 import { memo } from "react";
+
+import { useNotifications } from "../../api/notificationApi";
+import { NotificationItem } from "../NotificationItem/NotificationItem";
+
+import cls from "./NotificationList.module.scss";
+
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 import { VStack } from "@/shared/ui/Stack";
-import { useNotifications } from "../../api/notificationApi";
-import { NotificationItem } from "../NotificationItem/NotificationItem";
-import cls from "./NotificationList.module.scss";
 
 interface NotificationListProps {
   className?: string;
@@ -22,9 +25,9 @@ export const NotificationList = memo((props: NotificationListProps) => {
         gap="16"
         className={classNames(cls.NotificationList, {}, [className])}
       >
-        <Skeleton width={"100%"} border={"'8px"} height={"80px"} />
-        <Skeleton width={"100%"} border={"'8px"} height={"80px"} />
-        <Skeleton width={"100%"} border={"'8px"} height={"80px"} />
+        <Skeleton width="100%" border="8px" height="80px" />
+        <Skeleton width="100%" border="8px" height="80px" />
+        <Skeleton width="100%" border="8px" height="80px" />
       </VStack>
     );
   }

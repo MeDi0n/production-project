@@ -17,7 +17,8 @@ module.exports = {
     "@typescript-eslint",
     "i18next",
     "react-hooks",
-    "prettier",
+    "prettier", 
+    "ulbi-tv-plugin",
   ],
   extends: [
     "plugin:react/recommended",
@@ -29,6 +30,7 @@ module.exports = {
     // ---------------------------------------------------
     // ПРАВИЛО ДЛЯ СОРТИРОВКИ ИМПОРТОВ (FSD)
     // ---------------------------------------------------
+    "react/jsx-no-target-blank": "off",
     "import/order": [
       "error", // Считать ошибкой, если порядок нарушен
       {
@@ -135,6 +137,10 @@ module.exports = {
           "align",
           "direction",
           "gap",
+          "width",
+          "height",
+          "border",
+          "target"
         ],
       },
     ],
@@ -146,6 +152,7 @@ module.exports = {
     "no-undef": "off",
     "react/no-array-index-key": "off",
     "ulbi-tv-plugin/path-checker": ["error", { alias: "@" }],
+    "ulbi-tv-plugin/public-api-imports": ["error", { alias: "@" }],
   },
   globals: {
     __IS_DEV__: true,

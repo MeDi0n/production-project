@@ -3,17 +3,17 @@ import { memo, Suspense, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
-import { CommentList } from "@/entities/Comment";
-import { AddCommentForm } from "@/features/addCommentForm";
-import { fetchCommentsByArticleId } from "@/pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
-import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { VStack } from "@/shared/ui/Stack";
-import { Text, TextSize } from "@/shared/ui/Text/Text";
-
-import { Loader } from "@/shared/ui/Loader/Loader";
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
+import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { getArticleComments } from "../../model/slices/articleDetailsCommentsSlice";
+
+import { CommentList } from "@/entities/Comment";
+import { AddCommentForm } from "@/features/addCommentForm";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { Loader } from "@/shared/ui/Loader/Loader";
+import { VStack } from "@/shared/ui/Stack";
+import { Text, TextSize } from "@/shared/ui/Text/Text";
 
 interface ArticleDetailsCommentsProps {
   className?: string;

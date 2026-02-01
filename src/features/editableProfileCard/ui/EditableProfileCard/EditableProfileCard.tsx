@@ -3,6 +3,16 @@ import { memo, useCallback } from "react";
 import { t } from "i18next";
 import { useSelector } from "react-redux";
 
+import { ValidateProfileError } from "../../model/consts/consts";
+import { getProfileError } from "../../model/selectors/getProfileError/getProfileError";
+import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
+import { getProfileIsLoading } from "../../model/selectors/getProfileIsLoading/getProfileIsLoading";
+import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/getProfileReadonly";
+import { getProfileValidateErrors } from "../../model/selectors/getProfileValidateErrors/getProfileValidateErrors";
+import { fetchProfileData } from "../../model/services/fetchProfileData/fetchProfileData";
+import { profileActions, profileReducer } from "../../model/slice/profileSlice";
+import { EditableProfileCardHeader } from "../EditableProfileCardHeader/EditableProfileCardHeader";
+
 import { Country } from "@/entities/Country";
 import { Currency } from "@/entities/Currency";
 import { ProfileCard } from "@/entities/Profile";
@@ -15,16 +25,6 @@ import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { VStack } from "@/shared/ui/Stack";
 import { Text, TextTheme } from "@/shared/ui/Text/Text";
-
-import { ValidateProfileError } from "@/features/editableProfileCard/model/consts/consts";
-import { getProfileError } from "../../model/selectors/getProfileError/getProfileError";
-import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
-import { getProfileIsLoading } from "../../model/selectors/getProfileIsLoading/getProfileIsLoading";
-import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/getProfileReadonly";
-import { getProfileValidateErrors } from "../../model/selectors/getProfileValidateErrors/getProfileValidateErrors";
-import { fetchProfileData } from "../../model/services/fetchProfileData/fetchProfileData";
-import { profileActions, profileReducer } from "../../model/slice/profileSlice";
-import { EditableProfileCardHeader } from "../EditableProfileCardHeader/EditableProfileCardHeader";
 
 interface EditableProfileCardProps {
   className?: string;

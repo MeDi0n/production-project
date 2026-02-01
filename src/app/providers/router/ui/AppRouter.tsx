@@ -7,7 +7,7 @@ import {
   AppRoutesProps,
   routeConfig,
 } from "@/shared/config/routeConfig/routeConfig";
-import { PageLoader } from "@/widgets/PageLoader/PageLoader";
+import { PageLoader } from "@/widgets/PageLoader";
 
 const AppRouter = () => {
   const renderWithWrapper = useCallback((route: AppRoutesProps) => {

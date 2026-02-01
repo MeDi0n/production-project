@@ -3,9 +3,21 @@ import { memo, useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
-import { ArticleCodeBlockComponent } from "@/entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent";
-import { ArticleImageBlockComponent } from "@/entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent";
-import { ArticleTextBlockComponent } from "@/entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent";
+import { ArticleBlockType } from "../../model/consts/articleConsts";
+import {
+  getArticleDetailsData,
+  getArticleDetailsError,
+  getArticleDetailsIsLoading,
+} from "../../model/selectors/articleDetails";
+import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
+import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
+import { ArticleBlock } from "../../model/types/article";
+import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
+import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
+import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
+
+import cls from "./ArticleDetails.module.scss";
+
 import CalendarIcon from "@/shared/assets/icons/calendar-20-20.svg";
 import EyeIcon from "@/shared/assets/icons/eye-20-20.svg";
 import { classNames } from "@/shared/lib/classNames/classNames";
@@ -19,18 +31,6 @@ import { Icon } from "@/shared/ui/Icon/Icon";
 import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 import { HStack, VStack } from "@/shared/ui/Stack";
 import { Text, TextAlign, TextSize } from "@/shared/ui/Text/Text";
-
-import {
-  getArticleDetailsData,
-  getArticleDetailsError,
-  getArticleDetailsIsLoading,
-} from "../../model/selectors/articleDetails";
-import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
-import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
-
-import { ArticleBlockType } from "@/entities/Article/model/consts/articleConsts";
-import { ArticleBlock } from "@/entities/Article/model/types/article";
-import cls from "./ArticleDetails.module.scss";
 
 interface ArticleDetailsProps {
   className?: string;
