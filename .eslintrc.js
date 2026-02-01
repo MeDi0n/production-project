@@ -17,7 +17,7 @@ module.exports = {
     "@typescript-eslint",
     "i18next",
     "react-hooks",
-    "prettier", 
+    "prettier",
     "ulbi-tv-plugin",
   ],
   extends: [
@@ -140,7 +140,7 @@ module.exports = {
           "width",
           "height",
           "border",
-          "target"
+          "target",
         ],
       },
     ],
@@ -152,7 +152,7 @@ module.exports = {
     "no-undef": "off",
     "react/no-array-index-key": "off",
     "ulbi-tv-plugin/path-checker": ["error", { alias: "@" }],
-    "ulbi-tv-plugin/public-api-imports": ["error", { alias: "@" }],
+    "ulbi-tv-plugin/public-api-imports": ["error", { alias: "@", testFiles: ['**/*.test.*', '**/*.story.*','**/StoreDecorator.tsx']}],
   },
   globals: {
     __IS_DEV__: true,
