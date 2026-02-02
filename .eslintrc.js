@@ -19,14 +19,17 @@ module.exports = {
     "react-hooks",
     "prettier",
     "ulbi-tv-plugin",
+    "unused-imports",
   ],
   extends: [
     "plugin:react/recommended",
     "airbnb",
+
     "plugin:i18next/recommended",
     "plugin:prettier/recommended", // Prettier всегда должен быть последним
   ],
   rules: {
+    "unused-imports/no-unused-imports": "error",
     // ---------------------------------------------------
     // ПРАВИЛО ДЛЯ СОРТИРОВКИ ИМПОРТОВ (FSD)
     // ---------------------------------------------------
@@ -152,7 +155,13 @@ module.exports = {
     "no-undef": "off",
     "react/no-array-index-key": "off",
     "ulbi-tv-plugin/path-checker": ["error", { alias: "@" }],
-    "ulbi-tv-plugin/public-api-imports": ["error", { alias: "@", testFiles: ['**/*.test.*', '**/*.story.*','**/StoreDecorator.tsx']}],
+    "ulbi-tv-plugin/public-api-imports": [
+      "error",
+      {
+        alias: "@",
+        testFiles: ["**/*.test.*", "**/*.story.*", "**/StoreDecorator.tsx"],
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,

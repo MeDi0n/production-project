@@ -1,6 +1,5 @@
 import React from "react";
 
-import { PreloadedState } from "@reduxjs/toolkit";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import LoginForm from "./LoginForm";
