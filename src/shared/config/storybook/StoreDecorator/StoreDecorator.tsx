@@ -5,6 +5,7 @@ import { addCommentFormReducer } from "../../../../features/addCommentForm/model
 import { profileReducer } from "../../../../features/editableProfileCard/model/slice/profileSlice";
 
 import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
+// eslint-disable-next-line ulbi-tv-plugin/public-api-imports
 import { loginReducer } from "@/features/AuthByUsername/testing";
 import { ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 
