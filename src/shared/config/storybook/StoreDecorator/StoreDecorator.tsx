@@ -7,6 +7,8 @@ import { profileReducer } from "../../../../features/editableProfileCard/model/s
 import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
 // eslint-disable-next-line ulbi-tv-plugin/public-api-imports
 import { loginReducer } from "@/features/AuthByUsername/testing";
+// eslint-disable-next-line ulbi-tv-plugin/public-api-imports
+import { articleDetailsPageReducer } from "@/pages/ArticleDetailsPage/testing";
 import { ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 
 const defaultAsyncReducers: ReducersList = {
@@ -14,7 +16,7 @@ const defaultAsyncReducers: ReducersList = {
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
   addCommentForm: addCommentFormReducer,
-  articleDetailsPage: articleDetailsReducer,
+  articleDetailsPage: articleDetailsPageReducer,
 };
 
 export const StoreDecorator =
