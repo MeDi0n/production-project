@@ -12,7 +12,7 @@ import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleT
 import cls from "./ArticleListItem.module.scss";
 
 import EyeIcon from "@/shared/assets/icons/eye-20-20.svg";
-import { RoutePath } from "@/shared/const/router";
+import { getRouteArticleDetails } from "@/shared/const/router";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { AppLink } from "@/shared/ui/AppLink";
 import { Avatar } from "@/shared/ui/Avatar";
@@ -65,10 +65,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             />
           )}
           <div className={cls.footer}>
-            <AppLink
-              target={target}
-              to={RoutePath.article_details + article.id}
-            >
+            <AppLink target={target} to={getRouteArticleDetails(article.id)}>
               <Button theme={ButtonTheme.OUTLINE}>
                 {t("Читать далее...")}
               </Button>
@@ -83,7 +80,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   return (
     <AppLink
       target={target}
-      to={RoutePath.article_details + article.id}
+      to={getRouteArticleDetails(article.id)}
       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
     >
       <Card className={cls.card}>
