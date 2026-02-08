@@ -14,11 +14,13 @@ import cls from "./ArticleListItem.module.scss";
 import EyeIcon from "@/shared/assets/icons/eye-20-20.svg";
 import { getRouteArticleDetails } from "@/shared/const/router";
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { AppImage } from "@/shared/ui/AppImage";
 import { AppLink } from "@/shared/ui/AppLink";
 import { Avatar } from "@/shared/ui/Avatar";
 import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { Card } from "@/shared/ui/Card";
 import { Icon } from "@/shared/ui/Icon";
+import { Skeleton } from "@/shared/ui/Skeleton";
 import { Text } from "@/shared/ui/Text";
 
 interface ArticleListItemProps {
@@ -57,7 +59,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           </div>
           <Text title={article.title} className={cls.title} />
           {types}
-          <img src={article.img} className={cls.img} alt={article.title} />
+          <AppImage
+            fallback={<Skeleton width="100%" height={250} />}
+            src={article.img}
+            className={cls.img}
+            alt={article.title}
+          />
           {textBlock && (
             <ArticleTextBlockComponent
               block={textBlock}
@@ -85,7 +92,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     >
       <Card className={cls.card}>
         <div className={cls.imageWrapper}>
-          <img alt={article.title} src={article.img} className={cls.img} />
+          <AppImage
+            fallback={<Skeleton width={200} height={200} />}
+            alt={article.title}
+            src={article.img}
+            className={cls.img}
+          />
           <Text text={article.createdAt} className={cls.date} />
         </div>
         <div className={cls.infoWrapper}>
