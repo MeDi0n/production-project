@@ -107,7 +107,7 @@ module.exports = {
     "max-len": "off",
 
     // Включаем проверку Prettier через ESLint
-    "prettier/prettier": "error",
+    "prettier/prettier": ["error", { endOfLine: "auto" }],
 
     // ---------------------------------------------------
     // ОСТАЛЬНЫЕ ПРАВИЛА ПРОЕКТА
