@@ -2,7 +2,7 @@ import { memo } from "react";
 
 import { useTranslation } from "react-i18next";
 
-import { useArticleRecommendationsList } from "../../api/articleRecommendationsApi";
+import { useArticleRecommendationsList } from "../../api/aritcleRecommendationsApi";
 
 import { ArticleList } from "@/entities/Article";
 import { classNames } from "@/shared/lib/classNames/classNames";
@@ -28,8 +28,12 @@ export const ArticleRecommendationsList = memo(
     }
 
     return (
-      <VStack gap="8" className={classNames("", {}, [className])}>
-        <Text size={TextSize.L} title={t("Recommend")} />
+      <VStack
+        data-testid="ArticleRecommendationsList"
+        gap="8"
+        className={classNames("", {}, [className])}
+      >
+        <Text size={TextSize.L} title={t("Рекомендуем")} />
         <ArticleList articles={articles} target="_blank" />
       </VStack>
     );

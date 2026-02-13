@@ -22,7 +22,7 @@ describe("app/router/AppRouter", () => {
 
   test("Страница не найдена", async () => {
     componentRender(<AppRouter />, {
-      route: "/asdasdasd",
+      route: "/asfasfasfasf",
     });
 
     const page = await screen.findByTestId("NotFoundPage");

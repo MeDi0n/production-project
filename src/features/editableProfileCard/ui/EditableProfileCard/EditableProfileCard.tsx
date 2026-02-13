@@ -1,6 +1,6 @@
 import { memo, useCallback } from "react";
 
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
 import { ValidateProfileError } from "../../model/consts/consts";
@@ -30,11 +30,15 @@ interface EditableProfileCardProps {
   className?: string;
   id?: string;
 }
+
 const reducers: ReducersList = {
   profile: profileReducer,
 };
+
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
   const { className, id } = props;
+  const { t } = useTranslation("profile");
+
   const dispatch = useAppDispatch();
   const formData = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
@@ -117,11 +121,11 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
       <VStack gap="8" max className={classNames("", {}, [className])}>
         <EditableProfileCardHeader />
         {validateErrors?.length &&
-          validateErrors.map((err: ValidateProfileError) => (
+          validateErrors.map((err) => (
             <Text
               key={err}
               theme={TextTheme.ERROR}
-              text={validateErrorTranslates[err as ValidateProfileError]}
+              text={validateErrorTranslates[err]}
               data-testid="EditableProfileCard.Error"
             />
           ))}

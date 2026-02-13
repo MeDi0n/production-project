@@ -9,21 +9,6 @@ export type FlexAlign = "start" | "center" | "end";
 export type FlexDirection = "row" | "column";
 export type FlexGap = "4" | "8" | "16" | "32";
 
-type DivProps = DetailedHTMLProps<
-  HTMLAttributes<HTMLDivElement>,
-  HTMLDivElement
->;
-
-export interface FlexProps extends DivProps {
-  className?: string;
-  children: ReactNode;
-  justify?: FlexJustify;
-  align?: FlexAlign;
-  direction: FlexDirection;
-  gap?: FlexGap;
-  max?: boolean;
-}
-
 const justifyClasses: Record<FlexJustify, string> = {
   start: cls.justifyStart,
   center: cls.justifyCenter,
@@ -39,7 +24,7 @@ const alignClasses: Record<FlexAlign, string> = {
 
 const directionClasses: Record<FlexDirection, string> = {
   row: cls.directionRow,
-  column: cls.directionCollumn,
+  column: cls.directionColumn,
 };
 
 const gapClasses: Record<FlexGap, string> = {
@@ -48,6 +33,21 @@ const gapClasses: Record<FlexGap, string> = {
   16: cls.gap16,
   32: cls.gap32,
 };
+
+type DivProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>;
+
+export interface FlexProps extends DivProps {
+  className?: string;
+  children: ReactNode;
+  justify?: FlexJustify;
+  align?: FlexAlign;
+  direction: FlexDirection;
+  gap?: FlexGap;
+  max?: boolean;
+}
 
 export const Flex = (props: FlexProps) => {
   const {
@@ -58,6 +58,7 @@ export const Flex = (props: FlexProps) => {
     direction = "row",
     gap,
     max,
+    ...otherProps
   } = props;
 
   const classes = [
@@ -72,5 +73,9 @@ export const Flex = (props: FlexProps) => {
     [cls.max]: max,
   };
 
-  return <div className={classNames(cls.Flex, mods, classes)}>{children}</div>;
+  return (
+    <div className={classNames(cls.Flex, mods, classes)} {...otherProps}>
+      {children}
+    </div>
+  );
 };

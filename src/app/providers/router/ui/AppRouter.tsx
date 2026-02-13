@@ -1,4 +1,4 @@
-import { memo, Suspense, useCallback } from "react";
+import React, { memo, Suspense, useCallback } from "react";
 
 import { Route, Routes } from "react-router-dom";
 
@@ -14,6 +14,7 @@ const AppRouter = () => {
     const element = (
       <Suspense fallback={<PageLoader />}>{route.element}</Suspense>
     );
+
     return (
       <Route
         key={route.path}

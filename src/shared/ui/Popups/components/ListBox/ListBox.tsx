@@ -1,9 +1,9 @@
-import { Fragment, ReactNode, useState } from "react";
+import { Fragment, ReactNode } from "react";
 
 import { Listbox as HListBox } from "@headlessui/react";
 
-import { HStack } from "../../../../ui/Stack/HStack/HStack";
 import { Button } from "../../../Button/Button";
+import { HStack } from "../../../Stack";
 import { mapDirectionClass } from "../../styles/consts";
 import popupCls from "../../styles/popup.module.scss";
 
@@ -25,7 +25,7 @@ interface ListBoxProps {
   defaultValue?: string;
   onChange: (value: string) => void;
   readonly?: boolean;
-  direction: DropdownDirection;
+  direction?: DropdownDirection;
   label?: string;
 }
 
@@ -40,13 +40,12 @@ export function ListBox(props: ListBoxProps) {
     direction = "bottom right",
     label,
   } = props;
-  const [selectedPerson, setSelectedPerson] = useState();
 
   const optionsClasses = [mapDirectionClass[direction]];
 
   return (
     <HStack gap="4">
-      {label && <span>{`${label}>`}</span>}{" "}
+      {label && <span>{`${label}>`}</span>}
       <HListBox
         disabled={readonly}
         as="div"

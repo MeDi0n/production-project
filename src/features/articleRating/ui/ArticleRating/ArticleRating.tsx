@@ -26,7 +26,6 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     articleId,
     userId: userData?.id ?? "",
   });
-
   const [rateArticleMutation] = useRateArticle();
 
   const handleRateArticle = useCallback(
@@ -39,6 +38,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
           feedback,
         });
       } catch (e) {
+        // handle error
         console.log(e);
       }
     },
@@ -72,7 +72,10 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
       rate={rating?.rate}
       className={className}
       title={t("Оцените статью")}
-      feedbackTitle={t("Оставьте свой отзыв о статье")}
+      feedbackTitle={t(
+        "Оставьте свой отзыв о статье, это поможет улучшить качество"
+      )}
+      hasFeedback
     />
   );
 });

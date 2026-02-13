@@ -2,7 +2,6 @@ import { memo } from "react";
 
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { useSearchParams } from "react-router-dom";
 
 import {
   getArticlesPageError,
@@ -12,7 +11,6 @@ import {
 import { getArticles } from "../../model/slices/articlesPageSlice";
 
 import { ArticleList } from "@/entities/Article";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Text } from "@/shared/ui/Text";
 
 interface ArticleInfiniteListProps {
@@ -21,13 +19,11 @@ interface ArticleInfiniteListProps {
 
 export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
   const { className } = props;
-  const { t } = useTranslation();
   const articles = useSelector(getArticles.selectAll);
   const isLoading = useSelector(getArticlesPageIsLoading);
   const view = useSelector(getArticlesPageView);
   const error = useSelector(getArticlesPageError);
-  const [searchParams] = useSearchParams();
-  const dispatch = useAppDispatch();
+  const { t } = useTranslation();
 
   if (error) {
     return <Text text={t("Ошибка при загрузке статей")} />;

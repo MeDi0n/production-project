@@ -1,4 +1,6 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import React from "react";
+
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { NotificationList } from "./NotificationList";
 
@@ -29,7 +31,17 @@ Normal.parameters = {
         {
           id: "1",
           title: "Уведомление",
-          description: "Какой-то коментарий",
+          description: "Поставь лайк и оставь комментарий под Ulbi TV",
+        },
+        {
+          id: "2",
+          title: "Уведомление 2",
+          description: "Поставь лайк и оставь комментарий под Ulbi TV",
+        },
+        {
+          id: "3",
+          title: "Уведомление 3",
+          description: "Поставь лайк и оставь комментарий под Ulbi TV",
         },
       ],
     },

@@ -104,14 +104,19 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
       </>
     );
   } else if (error) {
-    content = <Text align={TextAlign.CENTER} title={t("article.loadError")} />;
+    content = (
+      <Text
+        align={TextAlign.CENTER}
+        title={t("Произошла ошибка при загрузке статьи.")}
+      />
+    );
   } else {
     content = (
       <>
         <HStack justify="center" max className={cls.avatarWrapper}>
           <Avatar size={200} src={article?.img} className={cls.avatar} />
         </HStack>
-        <VStack gap="4" max>
+        <VStack gap="4" max data-testid="ArticleDetails.Info">
           <Text
             className={cls.title}
             title={article?.title}

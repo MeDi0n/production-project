@@ -55,4 +55,5 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     </DynamicModuleLoader>
   );
 };
+
 export default memo(ArticlesPage);

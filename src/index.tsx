@@ -15,7 +15,7 @@ const container = document.getElementById("root");
 
 if (!container) {
   throw new Error(
-    "Контейнер root не найден. Не далось вмонтировать реакт приложение"
+    "Контейнер root не найден. НЕ удалось вмонтировать реакт приложение"
   );
 }
 
@@ -32,3 +32,4 @@ root.render(
     </StoreProvider>
   </BrowserRouter>
 );
+export { Theme } from "@/shared/const/theme";

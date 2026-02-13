@@ -1,4 +1,4 @@
-import { memo } from "react";
+import React, { memo } from "react";
 
 import DarkIcon from "@/shared/assets/icons/theme-dark.svg";
 import LightIcon from "@/shared/assets/icons/theme-light.svg";

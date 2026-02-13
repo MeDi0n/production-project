@@ -1,4 +1,4 @@
-import { memo, useCallback } from "react";
+import React, { memo, useCallback } from "react";
 
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,10 +21,10 @@ interface AvatarDropdownProps {
 export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
   const { className } = props;
   const { t } = useTranslation();
-  const authData = useSelector(getUserAuthData);
   const dispatch = useDispatch();
   const isAdmin = useSelector(isUserAdmin);
   const isManager = useSelector(isUserManager);
+  const authData = useSelector(getUserAuthData);
 
   const onLogout = useCallback(() => {
     dispatch(userActions.logout());

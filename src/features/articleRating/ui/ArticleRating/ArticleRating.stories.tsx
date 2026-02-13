@@ -1,4 +1,6 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import React from "react";
+
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import ArticleRating from "./ArticleRating";
 
@@ -30,7 +32,7 @@ Normal.decorators = [
 Normal.parameters = {
   mockData: [
     {
-      url: `${__API__}/article-ratings?userId=1$articleId=1`,
+      url: `${__API__}/article-ratings?userId=1&articleId=1`,
       method: "GET",
       status: 200,
       response: [
@@ -56,7 +58,7 @@ WithoutRate.decorators = [
 WithoutRate.parameters = {
   mockData: [
     {
-      url: `${__API__}/article-ratings?userId=1$articleId=1`,
+      url: `${__API__}/article-ratings?userId=1&articleId=1`,
       method: "GET",
       status: 200,
       response: [],

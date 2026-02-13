@@ -2,34 +2,6 @@
   position: relative;
 }
 
-.active {
-  background: var(--inverted-primary-color);
-}
-
-.disabled {
-  opacity: 0.7;
-}
-
-.optionBottomLeft {
-  top: 100%;
-  right: 0;
-}
-
-.optionBottomRight {
-  top: 100%;
-  left: 0;
-}
-
-.optionTopRight {
-  bottom: 100%;
-  left: 0;
-}
-
-.optionTopLeft {
-  bottom: 100%;
-  right: 0;
-}
-
 .trigger {
   background: none;
   outline: none;
@@ -37,4 +9,32 @@
   padding: 0;
   border: none;
   cursor: pointer;
+}
+
+.active {
+  background: var(--inverted-primary-color);
+}
+
+.optionsBottomLeft {
+  top: 100%;
+  right: 0;
+}
+
+.optionsBottomRight {
+  top: 100%;
+  left: 0;
+}
+
+.optionsTopRight {
+  bottom: 100%;
+  left: 0;
+}
+
+.optionsTopLeft {
+  right: 0;
+  bottom: 100%;
+}
+
+.disabled {
+  opacity: 0.7;
 }

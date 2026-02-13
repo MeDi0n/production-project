@@ -15,8 +15,8 @@ import {
   getRouteArticleCreate,
   getRouteArticleDetails,
   getRouteArticleEdit,
-  getRouteArticles,
   getRouteForbidden,
+  getRouteArticles,
   getRouteMain,
   getRouteProfile,
 } from "@/shared/const/router";

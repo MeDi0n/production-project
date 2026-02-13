@@ -1,4 +1,4 @@
-import { memo, useCallback, useState } from "react";
+import React, { memo, useCallback, useState } from "react";
 
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
@@ -24,6 +24,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
+
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
   }, []);
@@ -37,7 +38,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       <header className={classNames(cls.Navbar, {}, [className])}>
         <Text
           className={cls.appName}
-          title={t("Rostik")}
+          title={t("Ulbi TV App")}
           theme={TextTheme.INVERTED}
         />
         <AppLink

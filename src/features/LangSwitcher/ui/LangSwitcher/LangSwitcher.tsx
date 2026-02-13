@@ -1,4 +1,4 @@
-import { memo } from "react";
+import React, { memo } from "react";
 
 import { useTranslation } from "react-i18next";
 
@@ -23,7 +23,7 @@ export const LangSwitcher = memo(({ className, short }: LangSwitcherProps) => {
       theme={ButtonTheme.CLEAR}
       onClick={toggle}
     >
-      {short ? t("Короткий язык") : t("Язык")}
+      {t(short ? "Короткий язык" : "Язык")}
     </Button>
   );
 });

@@ -21,13 +21,15 @@ export interface DropdownItem {
 interface DropdownProps {
   className?: string;
   items: DropdownItem[];
+  direction?: DropdownDirection;
   trigger: ReactNode;
-  direction: DropdownDirection;
 }
 
 export function Dropdown(props: DropdownProps) {
-  const { className, trigger, items, direction } = props;
+  const { className, trigger, items, direction = "bottom right" } = props;
+
   const menuClasses = [mapDirectionClass[direction]];
+
   return (
     <Menu
       as="div"
@@ -38,8 +40,8 @@ export function Dropdown(props: DropdownProps) {
         {items.map((item, index) => {
           const content = ({ active }: { active: boolean }) => (
             <button
-              disabled={item.disabled}
               type="button"
+              disabled={item.disabled}
               onClick={item.onClick}
               className={classNames(cls.item, { [popupCls.active]: active })}
             >

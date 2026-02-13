@@ -1,4 +1,4 @@
-import { memo, ReactNode, useCallback, useEffect } from "react";
+import React, { memo, ReactNode, useCallback, useEffect } from "react";
 
 import { Overlay } from "../Overlay/Overlay";
 import { Portal } from "../Portal/Portal";
@@ -9,7 +9,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import {
   AnimationProvider,
   useAnimationLibs,
-} from "@/shared/lib/components/AnimationProvider/AnimationProvider";
+} from "@/shared/lib/components/AnimationProvider";
 import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 
 interface DrawerProps {
@@ -79,7 +79,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
     return null;
   }
 
-  const display = y.to((py: number) => (py < height ? "block" : "none"));
+  const display = y.to((py) => (py < height ? "block" : "none"));
 
   return (
     <Portal>
@@ -99,7 +99,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
   );
 });
 
-const DrawerAsync = memo((props: DrawerProps) => {
+const DrawerAsync = (props: DrawerProps) => {
   const { isLoaded } = useAnimationLibs();
 
   if (!isLoaded) {
@@ -107,12 +107,12 @@ const DrawerAsync = memo((props: DrawerProps) => {
   }
 
   return <DrawerContent {...props} />;
-});
+};
 
 export const Drawer = (props: DrawerProps) => {
   return (
     <AnimationProvider>
-      <DrawerAsync {...props} />;
+      <DrawerAsync {...props} />
     </AnimationProvider>
   );
 };

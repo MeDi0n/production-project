@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-import { Notification } from "../../model/types/notifications";
+import { Notification } from "../../model/types/notification";
 
 import cls from "./NotificationItem.module.scss";
 
