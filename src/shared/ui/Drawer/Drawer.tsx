@@ -1,16 +1,16 @@
-import React, { memo, ReactNode, useCallback, useEffect } from "react";
+import React, { memo, ReactNode, useCallback, useEffect } from 'react';
 
-import { Overlay } from "../Overlay/Overlay";
-import { Portal } from "../Portal/Portal";
+import { Overlay } from '../Overlay/Overlay';
+import { Portal } from '../Portal/Portal';
 
-import cls from "./Drawer.module.scss";
+import cls from './Drawer.module.scss';
 
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   AnimationProvider,
   useAnimationLibs,
-} from "@/shared/lib/components/AnimationProvider";
-import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
+} from '@/shared/lib/components/AnimationProvider';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 interface DrawerProps {
   className?: string;
@@ -72,19 +72,19 @@ export const DrawerContent = memo((props: DrawerProps) => {
       filterTaps: true,
       bounds: { top: 0 },
       rubberband: true,
-    }
+    },
   );
 
   if (!isOpen) {
     return null;
   }
 
-  const display = y.to((py) => (py < height ? "block" : "none"));
+  const display = y.to((py) => (py < height ? 'block' : 'none'));
 
   return (
     <Portal>
       <div
-        className={classNames(cls.Drawer, {}, [className, theme, "app_drawer"])}
+        className={classNames(cls.Drawer, {}, [className, theme, 'app_drawer'])}
       >
         <Overlay onClick={close} />
         <Spring.a.div

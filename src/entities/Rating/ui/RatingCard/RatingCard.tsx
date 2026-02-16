@@ -1,16 +1,16 @@
-import { memo, useCallback, useState } from "react";
+import { memo, useCallback, useState } from 'react';
 
-import { BrowserView, MobileView } from "react-device-detect";
-import { useTranslation } from "react-i18next";
+import { BrowserView, MobileView } from 'react-device-detect';
+import { useTranslation } from 'react-i18next';
 
-import { Button, ButtonSize, ButtonTheme } from "@/shared/ui/Button";
-import { Card } from "@/shared/ui/Card";
-import { Drawer } from "@/shared/ui/Drawer";
-import { Input } from "@/shared/ui/Input";
-import { Modal } from "@/shared/ui/Modal";
-import { HStack, VStack } from "@/shared/ui/Stack";
-import { StarRating } from "@/shared/ui/StarRating";
-import { Text } from "@/shared/ui/Text";
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
+import { Card } from '@/shared/ui/Card';
+import { Drawer } from '@/shared/ui/Drawer';
+import { Input } from '@/shared/ui/Input';
+import { Modal } from '@/shared/ui/Modal';
+import { HStack, VStack } from '@/shared/ui/Stack';
+import { StarRating } from '@/shared/ui/StarRating';
+import { Text } from '@/shared/ui/Text';
 
 interface RatingCardProps {
   className?: string;
@@ -35,7 +35,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
   const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [starsCount, setStarsCount] = useState(rate);
-  const [feedback, setFeedback] = useState("");
+  const [feedback, setFeedback] = useState('');
 
   const onSelectStars = useCallback(
     (selectedStarsCount: number) => {
@@ -46,7 +46,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
         onAccept?.(selectedStarsCount);
       }
     },
-    [hasFeedback, onAccept]
+    [hasFeedback, onAccept],
   );
 
   const acceptHandle = useCallback(() => {
@@ -66,15 +66,23 @@ export const RatingCard = memo((props: RatingCardProps) => {
         data-testid="RatingCard.Input"
         value={feedback}
         onChange={setFeedback}
-        placeholder={t("Ваш отзыв")}
+        placeholder={t('Ваш отзыв')}
       />
     </>
   );
 
   return (
-    <Card className={className} max data-testid="RatingCard">
-      <VStack align="center" gap="8" max>
-        <Text title={starsCount ? t("Спасибо за оценку!") : title} />
+    <Card
+      className={className}
+      max
+      data-testid="RatingCard"
+    >
+      <VStack
+        align="center"
+        gap="8"
+        max
+      >
+        <Text title={starsCount ? t('Спасибо за оценку!') : title} />
         <StarRating
           selectedStars={starsCount}
           size={40}
@@ -82,30 +90,51 @@ export const RatingCard = memo((props: RatingCardProps) => {
         />
       </VStack>
       <BrowserView>
-        <Modal isOpen={isModalOpen} lazy>
-          <VStack max gap="32">
+        <Modal
+          isOpen={isModalOpen}
+          lazy
+        >
+          <VStack
+            max
+            gap="32"
+          >
             {modalContent}
-            <HStack max gap="16" justify="end">
+            <HStack
+              max
+              gap="16"
+              justify="end"
+            >
               <Button
                 data-testid="RatingCard.Close"
                 onClick={cancelHandle}
                 theme={ButtonTheme.OUTLINE_RED}
               >
-                {t("Закрыть")}
+                {t('Закрыть')}
               </Button>
-              <Button data-testid="RatingCard.Send" onClick={acceptHandle}>
-                {t("Отправить")}
+              <Button
+                data-testid="RatingCard.Send"
+                onClick={acceptHandle}
+              >
+                {t('Отправить')}
               </Button>
             </HStack>
           </VStack>
         </Modal>
       </BrowserView>
       <MobileView>
-        <Drawer isOpen={isModalOpen} lazy onClose={cancelHandle}>
+        <Drawer
+          isOpen={isModalOpen}
+          lazy
+          onClose={cancelHandle}
+        >
           <VStack gap="32">
             {modalContent}
-            <Button fullWidth onClick={acceptHandle} size={ButtonSize.L}>
-              {t("Отправить")}
+            <Button
+              fullWidth
+              onClick={acceptHandle}
+              size={ButtonSize.L}
+            >
+              {t('Отправить')}
             </Button>
           </VStack>
         </Drawer>

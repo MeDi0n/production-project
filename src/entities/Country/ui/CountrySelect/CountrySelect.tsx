@@ -1,10 +1,10 @@
-import { memo, useCallback } from "react";
+import { memo, useCallback } from 'react';
 
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
-import { Country } from "../../model/types/country";
+import { Country } from '../../model/types/country';
 
-import { ListBox } from "@/shared/ui/Popups";
+import { ListBox } from '@/shared/ui/Popups';
 
 interface CountrySelectProps {
   className?: string;
@@ -29,19 +29,19 @@ export const CountrySelect = memo(
       (value: string) => {
         onChange?.(value as Country);
       },
-      [onChange]
+      [onChange],
     );
 
     return (
       <ListBox
         onChange={onChangeHandler}
         value={value}
-        defaultValue={t("Укажите страну")}
-        label={t("Укажите страну")}
+        defaultValue={t('Укажите страну')}
+        label={t('Укажите страну')}
         items={options}
         readonly={readonly}
         direction="top right"
       />
     );
-  }
+  },
 );

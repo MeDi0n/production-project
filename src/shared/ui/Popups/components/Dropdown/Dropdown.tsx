@@ -1,15 +1,15 @@
-import { Fragment, ReactNode } from "react";
+import { Fragment, ReactNode } from 'react';
 
-import { Menu } from "@headlessui/react";
+import { Menu } from '@headlessui/react';
 
-import { AppLink } from "../../../AppLink/AppLink";
-import { mapDirectionClass } from "../../styles/consts";
-import popupCls from "../../styles/popup.module.scss";
+import { AppLink } from '../../../AppLink/AppLink';
+import { mapDirectionClass } from '../../styles/consts';
+import popupCls from '../../styles/popup.module.scss';
 
-import cls from "./Dropdown.module.scss";
+import cls from './Dropdown.module.scss';
 
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { DropdownDirection } from "@/shared/types/ui";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DropdownDirection } from '@/shared/types/ui';
 
 export interface DropdownItem {
   disabled?: boolean;
@@ -26,7 +26,7 @@ interface DropdownProps {
 }
 
 export function Dropdown(props: DropdownProps) {
-  const { className, trigger, items, direction = "bottom right" } = props;
+  const { className, trigger, items, direction = 'bottom right' } = props;
 
   const menuClasses = [mapDirectionClass[direction]];
 

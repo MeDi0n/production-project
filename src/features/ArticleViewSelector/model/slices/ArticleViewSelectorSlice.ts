@@ -1,11 +1,11 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { ArticleViewSelectorSchema } from "../types/ArticleViewSelectorSchema";
+import { ArticleViewSelectorSchema } from '../types/ArticleViewSelectorSchema';
 
 const initialState: ArticleViewSelectorSchema = {};
 
 export const ArticleViewSelectorSlice = createSlice({
-  name: "ArticleViewSelector",
+  name: 'ArticleViewSelector',
   initialState,
   reducers: {
     template: (state, action: PayloadAction<string>) => {},

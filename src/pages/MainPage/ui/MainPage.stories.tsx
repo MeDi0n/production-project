@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import MainPage from "./MainPage";
+import MainPage from './MainPage';
 
-import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "@/shared/const/theme";
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 
 export default {
-  title: "pages/MainPage",
+  title: 'pages/MainPage',
   component: MainPage,
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
   decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof MainPage>;

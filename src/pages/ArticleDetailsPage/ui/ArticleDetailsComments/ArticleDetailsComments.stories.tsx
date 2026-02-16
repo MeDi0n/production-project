@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { ArticleDetailsComments } from "./ArticleDetailsComments";
+import { ArticleDetailsComments } from './ArticleDetailsComments';
 
-import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
-  title: "pages/ArticleDetailsPage/ArticleDetailsComments",
+  title: 'pages/ArticleDetailsPage/ArticleDetailsComments',
   component: ArticleDetailsComments,
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof ArticleDetailsComments>;
 
@@ -20,6 +20,6 @@ const Template: ComponentStory<typeof ArticleDetailsComments> = (args) => (
 
 export const Normal = Template.bind({});
 Normal.args = {
-  id: "1",
+  id: '1',
 };
 Normal.decorators = [StoreDecorator({})];

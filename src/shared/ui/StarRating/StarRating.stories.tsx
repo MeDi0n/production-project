@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { StarRating } from "./StarRating";
+import { StarRating } from './StarRating';
 
 export default {
-  title: "shared/StarRating",
+  title: 'shared/StarRating',
   component: StarRating,
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof StarRating>;
 

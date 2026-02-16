@@ -3,17 +3,17 @@ import {
   combineReducers,
   Reducer,
   ReducersMapObject,
-} from "@reduxjs/toolkit";
+} from '@reduxjs/toolkit';
 
 import {
   MountedReducers,
   ReducerManager,
   StateSchema,
   StateSchemaKey,
-} from "./StateSchema";
+} from './StateSchema';
 
 export function createReducerManager(
-  initialReducers: ReducersMapObject<StateSchema>
+  initialReducers: ReducersMapObject<StateSchema>,
 ): ReducerManager {
   const reducers = { ...initialReducers };
 

@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = (...segments) =>
-  path.resolve(__dirname, "..", "..", ...segments);
+  path.resolve(__dirname, '..', '..', ...segments);

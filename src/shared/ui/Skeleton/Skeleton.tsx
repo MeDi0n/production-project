@@ -1,8 +1,8 @@
-import { CSSProperties, memo } from "react";
+import { CSSProperties, memo } from 'react';
 
-import cls from "./Skeleton.module.scss";
+import cls from './Skeleton.module.scss';
 
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 interface SkeletonProps {
   className?: string;
@@ -21,6 +21,9 @@ export const Skeleton = memo((props: SkeletonProps) => {
   };
 
   return (
-    <div className={classNames(cls.Skeleton, {}, [className])} style={styles} />
+    <div
+      className={classNames(cls.Skeleton, {}, [className])}
+      style={styles}
+    />
   );
 });

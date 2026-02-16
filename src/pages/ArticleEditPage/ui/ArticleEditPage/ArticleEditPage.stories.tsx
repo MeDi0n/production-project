@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import ArticleEditPage from "./ArticleEditPage";
+import ArticleEditPage from './ArticleEditPage';
 
 export default {
-  title: "pages/ArticleEditPage/ArticleEditPage",
+  title: 'pages/ArticleEditPage/ArticleEditPage',
   component: ArticleEditPage,
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof ArticleEditPage>;
 

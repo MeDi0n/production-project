@@ -1,13 +1,13 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
-import cls from "./Flex.module.scss";
+import cls from './Flex.module.scss';
 
-import { classNames, Mods } from "@/shared/lib/classNames/classNames";
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
-export type FlexJustify = "start" | "center" | "end" | "between";
-export type FlexAlign = "start" | "center" | "end";
-export type FlexDirection = "row" | "column";
-export type FlexGap = "4" | "8" | "16" | "32";
+export type FlexJustify = 'start' | 'center' | 'end' | 'between';
+export type FlexAlign = 'start' | 'center' | 'end';
+export type FlexDirection = 'row' | 'column';
+export type FlexGap = '4' | '8' | '16' | '32';
 
 const justifyClasses: Record<FlexJustify, string> = {
   start: cls.justifyStart,
@@ -53,9 +53,9 @@ export const Flex = (props: FlexProps) => {
   const {
     className,
     children,
-    justify = "start",
-    align = "center",
-    direction = "row",
+    justify = 'start',
+    align = 'center',
+    direction = 'row',
     gap,
     max,
     ...otherProps
@@ -74,7 +74,10 @@ export const Flex = (props: FlexProps) => {
   };
 
   return (
-    <div className={classNames(cls.Flex, mods, classes)} {...otherProps}>
+    <div
+      className={classNames(cls.Flex, mods, classes)}
+      {...otherProps}
+    >
       {children}
     </div>
   );

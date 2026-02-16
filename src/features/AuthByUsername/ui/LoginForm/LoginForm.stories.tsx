@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import LoginForm from "./LoginForm";
+import LoginForm from './LoginForm';
 
-import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
-  title: "features/LoginForm",
+  title: 'features/LoginForm',
   component: LoginForm,
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof LoginForm>;
 
@@ -22,7 +22,7 @@ export const Primary = Template.bind({});
 Primary.args = {};
 Primary.decorators = [
   StoreDecorator({
-    loginForm: { username: "123", password: "asd" },
+    loginForm: { username: '123', password: 'asd' },
   }),
 ];
 
@@ -30,7 +30,7 @@ export const withError = Template.bind({});
 withError.args = {};
 withError.decorators = [
   StoreDecorator({
-    loginForm: { username: "123", password: "asd", error: "ERROR" },
+    loginForm: { username: '123', password: 'asd', error: 'ERROR' },
   }),
 ];
 

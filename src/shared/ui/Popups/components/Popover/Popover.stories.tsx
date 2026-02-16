@@ -1,11 +1,11 @@
-import { Popover } from "@headlessui/react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Popover } from '@headlessui/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
-  title: "shared/Popover",
+  title: 'shared/Popover',
   component: Popover,
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof Popover>;
 

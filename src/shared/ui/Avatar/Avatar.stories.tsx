@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Avatar } from "./Avatar";
-import AvatarImg from "./storybook.jpg";
+import { Avatar } from './Avatar';
+import AvatarImg from './storybook.jpg';
 
 export default {
-  title: "shared/Avatar",
+  title: 'shared/Avatar',
   component: Avatar,
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof Avatar>;
 

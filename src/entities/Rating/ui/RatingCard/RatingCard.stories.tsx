@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { RatingCard } from "./RatingCard";
+import { RatingCard } from './RatingCard';
 
 export default {
-  title: "entities/Rating/RatingCard",
+  title: 'entities/Rating/RatingCard',
   component: RatingCard,
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof RatingCard>;
 

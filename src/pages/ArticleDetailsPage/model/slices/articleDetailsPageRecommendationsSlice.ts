@@ -1,10 +1,10 @@
-import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
+import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 
-import { fetchArticleRecommendations } from "../services/fetchArticleRecommendations/fetchArticleRecommendations";
-import { ArticleDetailsRecommendationsSchema } from "../types/ArticleDetailsRecommendationsSchema";
+import { fetchArticleRecommendations } from '../services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { ArticleDetailsRecommendationsSchema } from '../types/ArticleDetailsRecommendationsSchema';
 
-import { StateSchema } from "@/app/providers/StoreProvider";
-import { Article } from "@/entities/Article";
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { Article } from '@/entities/Article';
 
 const recommendationsAdapter = createEntityAdapter<Article>({
   selectId: (article) => article.id,
@@ -14,11 +14,11 @@ export const getArticleRecommendations =
   recommendationsAdapter.getSelectors<StateSchema>(
     (state) =>
       state.articleDetailsPage?.recommendations ||
-      recommendationsAdapter.getInitialState()
+      recommendationsAdapter.getInitialState(),
   );
 
 const articleDetailsPageRecommendationsSlice = createSlice({
-  name: "articleDetailsPageRecommendationsSlice",
+  name: 'articleDetailsPageRecommendationsSlice',
   initialState:
     recommendationsAdapter.getInitialState<ArticleDetailsRecommendationsSchema>(
       {
@@ -26,7 +26,7 @@ const articleDetailsPageRecommendationsSlice = createSlice({
         error: undefined,
         ids: [],
         entities: {},
-      }
+      },
     ),
   reducers: {},
   extraReducers: (builder) => {

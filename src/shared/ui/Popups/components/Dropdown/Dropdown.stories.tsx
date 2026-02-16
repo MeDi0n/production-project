@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Button } from "../../../Button/Button";
+import { Button } from '../../../Button/Button';
 
-import { Dropdown } from "./Dropdown";
+import { Dropdown } from './Dropdown';
 
 export default {
-  title: "shared/Dropdown",
+  title: 'shared/Dropdown',
   component: Dropdown,
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof Dropdown>;
 
@@ -23,13 +23,13 @@ Normal.args = {
   trigger: <Button>Open</Button>,
   items: [
     {
-      content: "first",
+      content: 'first',
     },
     {
-      content: "second",
+      content: 'second',
     },
     {
-      content: "third",
+      content: 'third',
     },
   ],
 };

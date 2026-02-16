@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { ArticleDetailsPageHeader } from "./ArticleDetailsPageHeader";
+import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 
-import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
-  title: "pages/ArticleDetailsPage/ArticleDetailsPageHeader",
+  title: 'pages/ArticleDetailsPage/ArticleDetailsPageHeader',
   component: ArticleDetailsPageHeader,
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof ArticleDetailsPageHeader>;
 

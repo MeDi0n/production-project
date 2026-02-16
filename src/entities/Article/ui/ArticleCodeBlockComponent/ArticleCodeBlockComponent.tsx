@@ -1,13 +1,13 @@
-import { memo } from "react";
+import { memo } from 'react';
 
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
-import { ArticleCodeBlock } from "../../model/types/article";
+import { ArticleCodeBlock } from '../../model/types/article';
 
-import cls from "./ArticleCodeBlockComponent.module.scss";
+import cls from './ArticleCodeBlockComponent.module.scss';
 
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Code } from "@/shared/ui/Code";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Code } from '@/shared/ui/Code';
 
 interface ArticleCodeBlockComponentProps {
   className?: string;
@@ -26,5 +26,5 @@ export const ArticleCodeBlockComponent = memo(
         <Code text={block.code} />
       </div>
     );
-  }
+  },
 );

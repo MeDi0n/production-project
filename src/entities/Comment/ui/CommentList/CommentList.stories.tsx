@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { CommentList } from "./CommentList";
+import { CommentList } from './CommentList';
 
 export default {
-  title: "entities/Comment/CommentList",
+  title: 'entities/Comment/CommentList',
   component: CommentList,
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof CommentList>;
 
@@ -20,14 +20,14 @@ export const Normal = Template.bind({});
 Normal.args = {
   comments: [
     {
-      id: "1",
-      text: "hello world",
-      user: { id: "1", username: "Vasya" },
+      id: '1',
+      text: 'hello world',
+      user: { id: '1', username: 'Vasya' },
     },
     {
-      id: "2",
-      text: "Comment 2",
-      user: { id: "1", username: "Petya" },
+      id: '2',
+      text: 'Comment 2',
+      user: { id: '1', username: 'Petya' },
     },
   ],
 };

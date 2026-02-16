@@ -1,9 +1,9 @@
-import { getCounterValue } from "./getCounterValue";
+import { getCounterValue } from './getCounterValue';
 
-import { StateSchema } from "@/app/providers/StoreProvider";
+import { StateSchema } from '@/app/providers/StoreProvider';
 
-describe("getCounterValue.test", () => {
-  test("", () => {
+describe('getCounterValue.test', () => {
+  test('', () => {
     const state: DeepPartial<StateSchema> = {
       counter: { value: 10 },
     };

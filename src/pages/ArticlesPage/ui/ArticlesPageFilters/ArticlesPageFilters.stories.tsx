@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { ArticlesPageFilters } from "./ArticlesPageFilters";
+import { ArticlesPageFilters } from './ArticlesPageFilters';
 
 export default {
-  title: "pages/ArticlesPage/ArticlesPageFilters",
+  title: 'pages/ArticlesPage/ArticlesPageFilters',
   component: ArticlesPageFilters,
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof ArticlesPageFilters>;
 

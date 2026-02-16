@@ -1,8 +1,8 @@
-import { ChangeEvent, useMemo } from "react";
+import { ChangeEvent, useMemo } from 'react';
 
-import cls from "./Select.module.scss";
+import cls from './Select.module.scss';
 
-import { classNames, Mods } from "@/shared/lib/classNames/classNames";
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
 export interface SelectOption<T extends string> {
   value: T;
@@ -30,11 +30,15 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
   const optionsList = useMemo(
     () =>
       options?.map((opt) => (
-        <option className={cls.option} value={opt.value} key={opt.value}>
+        <option
+          className={cls.option}
+          value={opt.value}
+          key={opt.value}
+        >
           {opt.content}
         </option>
       )),
-    [options]
+    [options],
   );
 
   const mods: Mods = {};

@@ -1,12 +1,12 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { CountrySelect } from "./CountrySelect";
+import { CountrySelect } from './CountrySelect';
 
 export default {
-  title: "shared/CountrySelect",
+  title: 'shared/CountrySelect',
   component: CountrySelect,
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof CountrySelect>;
 

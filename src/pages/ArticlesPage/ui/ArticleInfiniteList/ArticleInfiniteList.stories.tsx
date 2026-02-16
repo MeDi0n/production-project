@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { ArticleInfiniteList } from "./ArticleInfiniteList";
+import { ArticleInfiniteList } from './ArticleInfiniteList';
 
 export default {
-  title: "pages/ArticlesPage/ArticleInfiniteList",
+  title: 'pages/ArticlesPage/ArticleInfiniteList',
   component: ArticleInfiniteList,
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof ArticleInfiniteList>;
 

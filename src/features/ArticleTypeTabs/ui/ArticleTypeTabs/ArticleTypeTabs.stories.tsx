@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { ArticleTypeTabs } from "./ArticleTypeTabs";
+import { ArticleTypeTabs } from './ArticleTypeTabs';
 
 export default {
-  title: "features/ArticleTypeTabs",
+  title: 'features/ArticleTypeTabs',
   component: ArticleTypeTabs,
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof ArticleTypeTabs>;
 

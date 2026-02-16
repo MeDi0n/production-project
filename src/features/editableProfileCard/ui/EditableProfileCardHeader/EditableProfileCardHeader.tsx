@@ -1,19 +1,19 @@
-import { memo, useCallback } from "react";
+import { memo, useCallback } from 'react';
 
-import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 
-import { getProfileData } from "../../model/selectors/getProfileData/getProfileData";
-import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/getProfileReadonly";
-import { updateProfileData } from "../../model/services/updateProfileData/updateProfileData";
-import { profileActions } from "../../model/slice/profileSlice";
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+import { profileActions } from '../../model/slice/profileSlice';
 
-import { getUserAuthData } from "@/entities/User";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Button, ButtonTheme } from "@/shared/ui/Button";
-import { HStack } from "@/shared/ui/Stack";
-import { Text } from "@/shared/ui/Text";
+import { getUserAuthData } from '@/entities/User';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { HStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
 
 interface EditableProfileCardHeaderProps {
   className?: string;
@@ -23,7 +23,7 @@ export const EditableProfileCardHeader = memo(
   (props: EditableProfileCardHeaderProps) => {
     const { className } = props;
 
-    const { t } = useTranslation("profile");
+    const { t } = useTranslation('profile');
     const authData = useSelector(getUserAuthData);
     const profileData = useSelector(getProfileData);
     const canEdit = authData?.id === profileData?.id;
@@ -43,8 +43,12 @@ export const EditableProfileCardHeader = memo(
     }, [dispatch]);
 
     return (
-      <HStack max justify="between" className={classNames("", {}, [className])}>
-        <Text title={t("Профиль")} />
+      <HStack
+        max
+        justify="between"
+        className={classNames('', {}, [className])}
+      >
+        <Text title={t('Профиль')} />
         {canEdit && (
           <div>
             {readonly ? (
@@ -53,7 +57,7 @@ export const EditableProfileCardHeader = memo(
                 onClick={onEdit}
                 data-testid="EditableProfileCardHeader.EditButton"
               >
-                {t("Редактировать")}
+                {t('Редактировать')}
               </Button>
             ) : (
               <HStack gap="8">
@@ -62,14 +66,14 @@ export const EditableProfileCardHeader = memo(
                   onClick={onCancelEdit}
                   data-testid="EditableProfileCardHeader.CancelButton"
                 >
-                  {t("Отменить")}
+                  {t('Отменить')}
                 </Button>
                 <Button
                   theme={ButtonTheme.OUTLINE}
                   onClick={onSave}
                   data-testid="EditableProfileCardHeader.SaveButton"
                 >
-                  {t("Сохранить")}
+                  {t('Сохранить')}
                 </Button>
               </HStack>
             )}
@@ -77,5 +81,5 @@ export const EditableProfileCardHeader = memo(
         )}
       </HStack>
     );
-  }
+  },
 );

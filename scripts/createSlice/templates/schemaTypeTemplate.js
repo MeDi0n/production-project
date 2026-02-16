@@ -1,7 +1,7 @@
-const firstCharUpperCase = require("../firstCharUpperCase");
+const firstCharUpperCase = require('../firstCharUpperCase');
 
 module.exports = (
-  sliceName
+  sliceName,
 ) => `export interface ${firstCharUpperCase(sliceName)}Schema {
     
 }`;

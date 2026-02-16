@@ -1,9 +1,9 @@
-import { memo, MutableRefObject, ReactNode, useRef } from "react";
+import { memo, MutableRefObject, ReactNode, useRef } from 'react';
 
-import cls from "./Page.module.scss";
+import cls from './Page.module.scss';
 
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { useInfiniteScroll } from "@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 
 interface PageProps {
   className?: string;
@@ -23,7 +23,10 @@ export const Page = memo((props: PageProps) => {
   });
 
   return (
-    <section ref={wrapperRef} className={classNames(cls.Page, {}, [className])}>
+    <section
+      ref={wrapperRef}
+      className={classNames(cls.Page, {}, [className])}
+    >
       {children}
       <div ref={triggerRef} />
     </section>
