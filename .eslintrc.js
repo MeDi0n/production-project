@@ -144,6 +144,7 @@ module.exports = {
           'height',
           'border',
           'target',
+          'feature',
         ],
       },
     ],

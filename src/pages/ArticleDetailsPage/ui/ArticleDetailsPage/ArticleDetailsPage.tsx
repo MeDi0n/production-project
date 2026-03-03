@@ -17,7 +17,7 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { toggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/Card';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
@@ -64,7 +64,13 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         >
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          <ArticleRatingCard id={id} />
+          <ToggleFeatures
+            // eslint-disable-next-line i18next/no-literal-string
+            feature="isArticleRatingEnabled"
+            on={<ArticleRating articleId={id} />}
+            // eslint-disable-next-line i18next/no-literal-string
+            off={<Card>Оценка статей скоро появится!</Card>}
+          />
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>
