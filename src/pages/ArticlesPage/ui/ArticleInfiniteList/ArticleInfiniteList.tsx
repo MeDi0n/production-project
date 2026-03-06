@@ -11,7 +11,7 @@ import {
 import { getArticles } from '../../model/slices/articlesPageSlice';
 
 import { ArticleList } from '@/entities/Article';
-import { Text } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/deprecated/Text';
 
 interface ArticleInfiniteListProps {
   className?: string;
