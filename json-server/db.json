@@ -967,9 +967,10 @@
         "isCounterEnabled": false
       },
       "jsonSettings": {
-        "theme": "app_dark_theme",
+        "theme": "app_orange_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "settingsPageHasBeenOpen": false,
+        "isArticlePageWasOpened": true
       },
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     },
