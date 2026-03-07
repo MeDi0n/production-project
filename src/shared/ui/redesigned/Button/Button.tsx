@@ -4,27 +4,16 @@ import cls from './Button.module.scss';
 
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
-export enum ButtonTheme {
-  CLEAR = 'clear',
-  CLEAR_INVERTED = 'clearInverted',
-  OUTLINE = 'outline',
-  OUTLINE_RED = 'outline_red',
-  BACKGROUND = 'background',
-  BACKGROUND_INVERTED = 'backgroundInverted',
-}
+export type ButtonVariant = 'clear' | 'outline';
 
-export enum ButtonSize {
-  M = 'size_m',
-  L = 'size_l',
-  XL = 'size_xl',
-}
+export type ButtonSize = 'm' | 'l' | 'xl';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   /**
    * Тема кнопки. Отвечает за визуал (в рамке, без стилей, противоположный теме приложения цвет и тд)
    */
-  theme?: ButtonTheme;
+  variant?: ButtonVariant;
   /**
    * Флаг, делающий кнопку квадратной
    */
@@ -47,26 +36,20 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean;
 }
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
 export const Button = memo((props: ButtonProps) => {
   const {
     className,
     children,
-    theme = ButtonTheme.OUTLINE,
+    variant = 'outline',
     square,
     disabled,
     fullWidth,
-    size = ButtonSize.M,
+    size = 'm',
     ...otherProps
   } = props;
 
   const mods: Mods = {
-    [cls[theme]]: true,
     [cls.square]: square,
-    [cls[size]]: true,
     [cls.disabled]: disabled,
     [cls.fullWidth]: fullWidth,
   };
@@ -74,7 +57,11 @@ export const Button = memo((props: ButtonProps) => {
   return (
     <button
       type="button"
-      className={classNames(cls.Button, mods, [className])}
+      className={classNames(cls.Button, mods, [
+        className,
+        cls[variant],
+        cls[size],
+      ])}
       disabled={disabled}
       {...otherProps}
     >

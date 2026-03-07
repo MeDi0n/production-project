@@ -1,6 +1,6 @@
 import { memo, useState } from 'react';
 
-import { Icon } from '../Icon/Icon';
+import { Icon } from '../../redesigned/Icon/Icon';
 
 import cls from './StarRating.module.scss';
 

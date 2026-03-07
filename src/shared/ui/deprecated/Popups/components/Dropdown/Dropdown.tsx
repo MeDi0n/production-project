@@ -2,7 +2,7 @@ import { Fragment, ReactNode } from 'react';
 
 import { Menu } from '@headlessui/react';
 
-import { AppLink } from '../../../AppLink/AppLink';
+import { AppLink } from '../../../../redesigned/AppLink/AppLink';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
 

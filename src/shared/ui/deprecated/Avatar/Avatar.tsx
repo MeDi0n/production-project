@@ -1,8 +1,8 @@
 import { CSSProperties, useMemo } from 'react';
 
 import UserIcon from '../../../assets/icons/user-filled.svg';
+import { Icon } from '../../redesigned/Icon';
 import { AppImage } from '../AppImage';
-import { Icon } from '../Icon';
 import { Skeleton } from '../Skeleton';
 
 import cls from './Avatar.module.scss';
@@ -47,7 +47,6 @@ export const Avatar = ({
   );
   const errorFallback = (
     <Icon
-      inverted={fallbackInverted}
       width={size}
       height={size}
       Svg={UserIcon}

@@ -1,6 +1,6 @@
 import { memo, useCallback } from 'react';
 
-import { Button, ButtonTheme } from '../Button/Button';
+import { Button, ButtonTheme } from '../../deprecated/Button/Button';
 
 import cls from './Code.module.scss';
 

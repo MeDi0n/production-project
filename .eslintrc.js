@@ -145,6 +145,8 @@ module.exports = {
           'border',
           'target',
           'feature',
+          'color',
+          'variant',
         ],
       },
     ],
