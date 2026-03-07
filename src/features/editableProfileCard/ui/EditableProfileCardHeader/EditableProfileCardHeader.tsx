@@ -11,9 +11,9 @@ import { profileActions } from '../../model/slice/profileSlice';
 import { getUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { HStack } from '@/shared/ui/deprecated/Stack';
-import { Text } from '@/shared/ui/deprecated/Text';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Text } from '@/shared/ui/deprecated/Text';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 interface EditableProfileCardHeaderProps {
   className?: string;

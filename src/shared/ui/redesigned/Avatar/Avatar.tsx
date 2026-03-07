@@ -14,20 +14,9 @@ interface AvatarProps {
   src?: string;
   size?: number;
   alt?: string;
-  fallbackInverted?: boolean;
 }
 
-/**
- * Устарел используем новые компоменты из папки redesigned
- * @deprecated
- */
-export const Avatar = ({
-  className,
-  src,
-  size = 100,
-  alt,
-  fallbackInverted,
-}: AvatarProps) => {
+export const Avatar = ({ className, src, size = 100, alt }: AvatarProps) => {
   const mods: Mods = {};
 
   const styles = useMemo<CSSProperties>(
