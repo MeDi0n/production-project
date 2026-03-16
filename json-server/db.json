@@ -230,7 +230,7 @@
       "id": "7",
       "title": "Ruby news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://res.cloudinary.com/practicaldev/image/fetch/s--oqV3akcU--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/pgnw91fs7tpxn0wyeqh2.jpg",
+      "img": "https://www.run-it.com.ua/wp-content/uploads/2024/06/ruby-programming-language.png",
       "views": 100,
       "createdAt": "21.02.2022",
       "userId": "1",
@@ -948,7 +948,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_orange_theme",
+        "theme": "app_dark_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlePageWasOpened": true
