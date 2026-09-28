@@ -125,7 +125,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
     >
       <Card
         className={cls.card}
-        border="round"
+        border="partial"
         padding="0"
       >
         <AppImage

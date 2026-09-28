@@ -120,6 +120,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
   return (
     <Card
       padding="24"
+      border="partial"
       max
       className={className}
     >
