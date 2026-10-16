@@ -9,16 +9,20 @@
       }
     ]
   ],
-  "plugins": [
-    [
-      "i18next-extract",
-      {
-        "locales": ["en", "ru"],
-        "keyAsDefaultValue": true,
-        "outputPath": "locales/{{locale}}/{{ns}}.json",
-        "transSupportBasicHtmlNodes": true,
-        "discardOldKeys": true
-      }
-    ]
-  ]
+  "env": {
+    "development": {
+      "plugins": [
+        [
+          "i18next-extract",
+          {
+            "locales": ["en", "ru"],
+            "keyAsDefaultValue": true,
+            "outputPath": "locales/{{locale}}/{{ns}}.json",
+            "transSupportBasicHtmlNodes": true,
+            "discardOldKeys": true
+          }
+        ]
+      ]
+    }
+  }
 }
