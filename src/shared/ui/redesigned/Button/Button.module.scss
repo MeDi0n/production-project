@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
 
-  &:hover {
+  &:not(.disabled):hover {
     color: var(--accent-redesigned);
 
     .addonLeft svg,
@@ -96,6 +96,7 @@
 
 .disabled {
   opacity: 0.5;
+  cursor: default;
 }
 
 .fullWidth {
